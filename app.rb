@@ -3,9 +3,10 @@ Bundler.require
 
 class FeelGoodBot < Sinatra::Base
   get '/' do
-    %Q{
+    @adjective = ["nice", "alright", "decent"].shuffle.first
+    erb %Q{
       <h1>Good morning!</h1>
-      <p>You look nice today.</p>
+      <p>You look <%= @adjective %> today.</p>
     }
   end
 
