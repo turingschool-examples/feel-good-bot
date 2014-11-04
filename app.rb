@@ -2,6 +2,9 @@ require 'bundler'
 Bundler.require
 
 class FeelGoodBot < Sinatra::Base
+  register Sinatra::Partial
+  set :partial_template_engine, :erb
+  
   helpers do
     def yell(name)
       name.upcase
