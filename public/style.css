@@ -2,3 +2,12 @@ body {
   background-color: #DFD;
   font-family: Helvetica, sans-serif;
 }
+
+.robot {
+  margin-right: 2em;
+  display: inline-block;
+}
+
+.robot img {
+  max-width: 100px;
+}

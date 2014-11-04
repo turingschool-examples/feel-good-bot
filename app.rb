@@ -1,6 +1,8 @@
 require 'bundler'
 Bundler.require
 
+require './robots'
+
 class FeelGoodBot < Sinatra::Base
   register Sinatra::Partial
   set :partial_template_engine, :erb
@@ -25,6 +27,15 @@ class FeelGoodBot < Sinatra::Base
     @adjective = ["plain", "stoic", "simple"].shuffle.first
     erb :index, layout: false
   end
-
+  
+  get '/robots' do
+    @robots = []
+    @robots << Robot.new("Skip", "Chipotle")
+    @robots << Robot.new("Cybel", "Illegal Pete's")
+    @robots << Robot.new("Norbit", "WaffleUp")
+    @robots << Robot.new("Spark", "Panera")
+    erb :robots
+  end
+  
   run! if app_file == $0
 end
