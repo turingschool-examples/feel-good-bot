@@ -1,9 +1,3 @@
 <h2>Meet the Robots</h2>
 
-<% @robots.each do |robot| %>
-  <div class="robot">
-    <h3><%= robot.name %></h3>
-    <img src="<%= robot.selfie_url %>" alt="<%= robot.name %>">
-    <p><strong>Favorite Food:</strong> <%= robot.favorite_food %></p>
-  </div>
-<% end %>
+<%= partial(:'partials/robot', :collection => @robots) %>
