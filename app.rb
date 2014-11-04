@@ -12,6 +12,11 @@ class FeelGoodBot < Sinatra::Base
     @adjective = ["nice", "alright", "decent"].shuffle.first
     erb :index
   end
+  
+  get '/mean' do
+    @adjective = ["horrible", "terrible", "smelly"].shuffle.first
+    erb :index
+  end
 
   run! if app_file == $0
 end
