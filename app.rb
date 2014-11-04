@@ -3,7 +3,10 @@ Bundler.require
 
 class FeelGoodBot < Sinatra::Base
   get '/' do
-    "You look nice today."
+    %Q{
+      <h1>Good morning!</h1>
+      <p>You look nice today.</p>
+    }
   end
 
   run! if app_file == $0
