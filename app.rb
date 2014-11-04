@@ -17,6 +17,11 @@ class FeelGoodBot < Sinatra::Base
     @adjective = ["horrible", "terrible", "smelly"].shuffle.first
     erb :index
   end
+  
+  get '/without-layout' do
+    @adjective = ["plain", "stoic", "simple"].shuffle.first
+    erb :index, layout: false
+  end
 
   run! if app_file == $0
 end
