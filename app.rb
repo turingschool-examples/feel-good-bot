@@ -1,11 +1,14 @@
 require 'bundler'
 Bundler.require
 
-require './robots'
+require './lib/models/robots'
+require './lib/helpers/robot_helpers'
 
 class FeelGoodBot < Sinatra::Base
   register Sinatra::Partial
   set :partial_template_engine, :erb
+  
+  helpers RobotHelpers
   
   helpers do
     def yell(name)
